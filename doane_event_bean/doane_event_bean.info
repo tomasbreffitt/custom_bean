@@ -1,0 +1,5 @@
+name = Doane Events Bean
+description = Customizable upcoming events view in a bean
+core = 7.x
+files[] = "plugins/bean/doane_event_bean.inc"
+dependencies[] = "bean"

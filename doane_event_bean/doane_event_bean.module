@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Bean plugin for showing events.
+ */
+
+/**
+ * Implements hook_bean_types_api_info().
+ */
+function doane_event_bean_bean_types_api_info() {
+  return array('api' => 4);
+}
+
+/**
+ * Implements hook_bean_types().
+ */
+function doane_event_bean_bean_types() {
+  $plugins = array();
+  $plugin_path = drupal_get_path('module', 'doane_event_bean') . '/plugins/bean';
+  $plugins['doane_event_bean'] = array(
+    'label' => t('Event Bean'),
+    'handler' => array(
+      'class' => 'EventBean',
+      'parent' => 'bean',
+    ),
+    'path' => $plugin_path,
+    'file' => 'doane_event_bean.inc',
+  );
+  return $plugins;
+}
